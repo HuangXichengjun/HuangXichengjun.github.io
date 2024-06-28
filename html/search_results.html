@@ -1,0 +1,32 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/search_results.css' %}" />
+<div class="forum1">
+    {% for model in results %}
+    <div class="row">
+        <div class="post-container">
+            <div class="post-content">
+                <h2 class="title1">{{ model.title }}</h2>
+                <p class="content1">{{ model.content }}</p>
+                <div class="post-meta">
+                    <span class="name1">{{ model.name }}</span>
+                    <span class="time1">{{ model.created_at }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+        <div class="post-container">
+            <p>没有任何帖子</p>
+        </div>
+    {% endfor %}
+</div>
+<script>
+    // 选择所有的帖子容器
+    document.querySelectorAll('.post-container').forEach((container) => {
+        container.addEventListener('click', () => {
+            // 切换内容的显示状态
+            const content = container.querySelector('.content1');
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+</script>

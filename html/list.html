@@ -1,0 +1,72 @@
+<!-- list.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>论坛</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/list.css' %}" />
+</head>
+<body>
+    <header><h1 id="web_title">You can talk the AR with people from all walks of life in there:<a href="{% url 'index' %}">回到首页</a></h1></header>
+    <div class="container">
+        <a href="{% url 'add' %}" class="submit_"><div class="submit">发布作品</div></a>
+        <a href="{% url 'mine_remark' %}" class="mine_"><div class="mine">我的贴子</div></a>
+        <div class="search-container">
+            <input type="text" id="keyword" placeholder="Enter keyword">
+            <button onclick="performSearch()">Search</button>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function performSearch() {
+            var keyword = document.getElementById('keyword').value;
+            // 使用Ajax发送GET请求到后端
+            $.ajax({
+                url: '../search_results/', // 假设这是你的Django视图URL
+                type: 'GET',
+                data: { keyword: keyword },
+                success: function(data) {
+                    // 假设后端返回的是完整的HTML页面
+                    document.getElementById('results').innerHTML = data;
+                },
+                error: function() {
+                    alert('Error occurred during the search.');
+                }
+            });
+        }
+    </script>
+    <div id="results">
+        <div class="forum1">
+            {% for model in models %}
+            <div class="row">
+                <div class="post-container">
+                    <div class="post-content">
+                        <h2 class="title1">{{ model.title }}</h2>
+                        <p class="content1">{{ model.content }}</p>
+                        <div class="post-meta">
+                            <span class="name1">{{ model.name }}</span>
+                            <span class="time1">{{ model.created_at }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <div class="post-container">
+                    <p>没有任何帖子</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+        <script>
+            // 选择所有的帖子容器
+            document.querySelectorAll('.post-container').forEach((container) => {
+                container.addEventListener('click', () => {
+                    // 切换内容的显示状态
+                    const content = container.querySelector('.content1');
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        </script>
+</body>
+</html>

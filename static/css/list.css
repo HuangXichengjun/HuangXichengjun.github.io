@@ -1,0 +1,146 @@
+header{
+    background-color: #3d9629;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+
+
+
+/* 基本样式 */
+.forum1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.row {
+    width: calc(45% - 20px);
+    min-height: 120px;
+    margin-bottom: 20px;
+}
+
+.post-container {
+    background-color: #73b1bc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* 表示可点击 */
+}
+
+.post-container:hover {
+    box-shadow: 0 5px 15px rgba(66, 165, 207, 0.2);
+    transform: translateY(-5px);
+}
+
+.post-content {
+    flex: 1; /* 自动扩展以填充容器 */
+    position: relative;
+    padding: 0;
+}
+
+.title1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.content1 {
+    display: none; /* 默认不显示内容 */
+    margin-bottom: 10px;
+    overflow: auto; /* 确保内容可以滚动 */
+}
+
+.post-meta {
+    position: static; /* 调整定位方式 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.name1, .time1 {
+    font-size: 14px;
+}
+
+/* 适配名字和时间在最下方且不重叠 */
+.name1 {
+    margin-left: 10px;
+}
+
+.time1 {
+    margin-right: 10px;
+}
+
+
+
+.submit_,.mine_{
+    text-decoration: none;
+}
+
+
+
+.submit, .mine {
+    display: flex;           /* 启用 Flexbox */
+    align-items: center;      /* 垂直居中对齐 */
+    justify-content: center; /* 水平居中对齐 */
+    padding: 10px 20px;      /* 内边距 */
+    text-decoration: none;    /* 移除下划线 */
+    color: #fff;             /* 文字颜色 */
+    background-color: #007bff; /* 背景颜色 */
+    border-radius: 4px;      /* 圆角边框 */
+    transition: background-color 0.3s; /* 背景颜色变化的过渡效果 */
+}
+
+/* 鼠标悬停效果 */
+.submit:hover, .mine:hover {
+    background-color: #0056b3; /* 鼠标悬停时的背景颜色 */
+}
+.container {
+    display: flex;           /* 启用 Flexbox */
+    justify-content: space-between; /* 左右对齐子元素 */
+    align-items: center;      /* 垂直居中对齐 */
+}
+/* 链接和输入框样式 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; /* 外边距 */
+}
+
+/* 搜索输入框样式 */
+#keyword {
+    padding: 10px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    border: 2px solid #ccc; /* 边框 */
+    border-radius: 4px; /* 圆角边框 */
+    outline: none; /* 点击时无轮廓 */
+    transition: border-color 0.3s; /* 边框颜色变化的过渡效果 */
+}
+#keyword:focus {
+    border-color: #007bff; /* 点击时边框颜色 */
+}
+
+/* 搜索按钮样式 */
+button {
+    padding: 10px 20px; /* 内边距 */
+    margin-left: 10px; /* 与输入框的间距 */
+    font-size: 16px; /* 字体大小 */
+    color: white; /* 文字颜色 */
+    background-color: #007bff; /* 背景颜色 */
+    border: none; /* 无边框 */
+    border-radius: 4px; /* 圆角边框 */
+    cursor: pointer; /* 鼠标悬停时显示指针手势 */
+    transition: background-color 0.3s; /* 背景颜色变化的过渡效果 */
+}
+button:hover {
+    background-color: #0056b3; /* 鼠标悬停时的背景颜色 */
+}

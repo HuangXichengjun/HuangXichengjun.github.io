@@ -1,0 +1,69 @@
+.forum1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.row {
+    width: calc(45% - 20px);
+    min-height: 120px;
+    margin-bottom: 20px;
+}
+
+.post-container {
+    background-color: #73b1bc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* 表示可点击 */
+}
+
+.post-container:hover {
+    box-shadow: 0 5px 15px rgba(66, 165, 207, 0.2);
+    transform: translateY(-5px);
+}
+
+.post-content {
+    flex: 1; /* 自动扩展以填充容器 */
+    position: relative;
+    padding: 0;
+}
+
+.title1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.content1 {
+    display: block; /* 默认不显示内容 */
+    margin-bottom: 10px;
+    overflow: auto; /* 确保内容可以滚动 */
+}
+
+.post-meta {
+    position: static; /* 调整定位方式 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.name1, .time1 {
+    font-size: 14px;
+}
+
+/* 适配名字和时间在最下方且不重叠 */
+.name1 {
+    margin-left: 10px;
+}
+
+.time1 {
+    margin-right: 10px;
+}

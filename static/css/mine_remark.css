@@ -1,0 +1,172 @@
+header{
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    display: flex;          /* 使用Flexbox布局 */
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center;     /* 垂直居中对齐 */
+    padding: 0;              /* 移除默认内边距 */
+    margin: 0;  
+    height: 120px;
+}
+header a,header h1
+{
+    font-size: 40px;
+    margin: 0 20px;         /* 设置间隔 */        /* 设置字体大小 */
+    color: #000;            /* 设置字体颜色 */
+    text-decoration: none;
+}
+header a{
+    color: #5541c4;
+}
+.forum1 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.row {
+    width: calc(45% - 20px);
+    min-height: 120px;
+    margin-bottom: 20px;
+}
+
+.post-container {
+    background-color: #73b1bc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* 表示可点击 */
+}
+
+.post-container:hover {
+    box-shadow: 0 5px 15px rgba(66, 165, 207, 0.2);
+    transform: translateY(-5px);
+}
+
+.post-content {
+    flex: 1; /* 自动扩展以填充容器 */
+    position: relative;
+    padding: 0;
+}
+
+.title1 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.content1 {
+    display: none; /* 默认不显示内容 */
+    margin-bottom: 10px;
+    overflow: auto; /* 确保内容可以滚动 */
+}
+
+.post-meta {
+    position: relative;/* 调整定位方式 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.name1, .time1 {
+    font-size: 14px;
+    display: block; 
+}
+
+/* 适配名字和时间在最下方且不重叠 */
+.name1 {
+    margin-left: 10px;
+}
+
+.time1 {
+    margin-right: 10px;
+}
+
+.edit {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 0 20px; /* 与容器边缘保持一定距离 */
+    justify-content: space-between; /* 按钮分布在两边 */
+    display: inline-block;
+}
+
+.delete {
+    /* 删除按钮的样式，可以添加margin或position进行定位 */
+    text-decoration: none;
+    margin-left: 10px; /* 与姓名的距离，根据需要调整 */
+}
+.delete>a>div{
+    text-decoration: none;
+}
+.change>a>div{
+    text-decoration: none;
+}
+.change {
+    /* 修改按钮的样式，可以添加margin或position进行定位 */
+    text-decoration: none;
+    margin-right: 10px; /* 与日期的距离，根据需要调整 */
+}
+.round-box_1,.round-box_2 {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #7261cf;
+    margin: 2px 0; 
+}
+
+/* 更新按钮样式 */
+.edit a {
+    opacity: 0; /* 默认不显示按钮 */
+    transition: opacity 0.3s; /* 过渡效果 */
+}
+
+
+
+
+
+
+
+
+
+/* 
+.round-box{
+    margin-top: 25px;
+    width: 50px;        
+    height: 25px;       
+    background-color: #7261cf; 
+    border: 1px solid #c4b4b4;  
+    border-radius: 2px;  
+    text-align: center; 
+    color: #fff;
+} */
+/* .edit{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.edit>a{
+    padding: 10px;
+    text-decoration: none;
+}
+.edit>a>div{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.none {
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}  */

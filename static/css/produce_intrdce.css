@@ -1,0 +1,84 @@
+/* 重置一些基本元素的样式 */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置基本的字体和页面不透明度 */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* 容器样式：包含侧边栏和主要内容 */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex; /* 使用flex布局 */
+    justify-content: space-between; /* 子元素之间的间距 */
+}
+
+/* 侧边栏基本样式 */
+.sidebar, .sidebar_ {
+    width: 20%; /* 侧边栏宽度 */
+    background: #f2f2f2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 内容区域样式 */
+.content {
+    width: 60%; /* 内容区域宽度 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 侧边栏列表样式 */
+.sidebar ul, .sidebar_ ul {
+    list-style-type: none;
+}
+
+.sidebar li a, .sidebar_ li a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd; /* 项目下边框 */
+}
+
+.sidebar li a:hover, .sidebar_ li a:hover {
+    background-color: #ddd;
+}
+
+/* 底部样式 */
+.footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 20px; /* 与内容区域的间距 */
+}
+
+/* 适配移动端设备 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar, .content, .sidebar_ {
+        width: 100%;
+    }
+
+    .sidebar, .sidebar_ {
+        margin-bottom: 20px; /* 侧边栏之间的间距 */
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的贴子</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/mine_remark.css' %}" />
+</head>
+<body>
+    <header><a href="{% url 'list' %}">论坛首页</a>    <h1 id="web_title">我的发布 </h1>   <a href="{% url 'index' %}">回到首页</a></header>
+    <div class="forum1">
+        {% for model in results %}
+        <div class="row">
+            <div class="post-container">
+                <div class="post-content">
+                    <h2 class="title1">{{ model.title }}</h2>
+                    <p class="content1">{{ model.content }}</p>
+                    <div class="post-meta">
+                        <span class="name1">{{ model.name }}</span>
+                        <!-- 删除按钮放到姓名下方 -->
+                        <div class="delete">
+                            <a href="{% url 'delete_remark' model.id %}"><div class="round-box_1">删除</div></a>
+                        </div>
+                        <span class="time1">{{ model.created_at }}</span>
+                        <!-- 修改按钮放到日期下方 -->
+                        <div class="change">
+                            <a href="{% url 'change_remark' model.id %}"><div class="round-box_2">修改</div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+            <div class="post-container">
+                <p>没有任何帖子</p>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+        document.querySelectorAll('.post-container').forEach((container) => {
+            container.addEventListener('click', () => {
+                const content = container.querySelector('.content1');
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
